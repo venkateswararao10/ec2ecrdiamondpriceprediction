@@ -1,1 +1,10 @@
+numpy
+pandas
 Flask
+ipykernel==6.23.3
+matplotlib
+seaborn
+plotly
+cufflinks
+scikit-learn
+-e .
