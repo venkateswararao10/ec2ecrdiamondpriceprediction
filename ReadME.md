@@ -1,37 +1,32 @@
-## End to End ML Project
-## create environment
-```
-conda activate
-conda create -p venv python==3.8
-conda activate venv\
-```
-## install all necessary libraries
-```
-pip install -r requirements.txt
-```
+End to End MAchine Learning Project
+Docker Build checked
+Github Workflow
+Iam User In AWS
+Docker Setup In EC2 commands to be Executed
+#optinal
 
-```
-Approach for the project
-Data Ingestion :
+sudo apt-get update -y
 
-In Data Ingestion phase the data is first read as csv.
-Then the data is split into training and testing and saved as csv file.
-Data Transformation :
+sudo apt-get upgrade
 
-In this phase a ColumnTransformer Pipeline is created.
-for Numeric Variables first SimpleImputer is applied with strategy median , then Standard Scaling is performed on numeric data.
-for Categorical Variables SimpleImputer is applied with most frequent strategy, then ordinal encoding performed , after this data is scaled with Standard Scaler.
-This preprocessor is saved as pickle file.
-Model Training :
+#required
 
-In this phase base model is tested . The best model found was catboost regressor.
-After this hyperparameter tuning is performed on catboost and knn model.
-A final VotingRegressor is created which will combine prediction of catboost, xgboost and knn models.
-This model is saved as pickle file.
-Prediction Pipeline :
+curl -fsSL https://get.docker.com -o get-docker.sh
 
-This pipeline converts given data into dataframe and has various functions to load pickle files and predict the final results in python.
-Flask App creation :
+sudo sh get-docker.sh
 
-Flask app is created with User Interface to predict the gemstone prices inside a Web Application.
-```
+sudo usermod -aG docker ubuntu
+
+newgrp docker
+
+Configure EC2 as self-hosted runner:
+Setup github secrets:
+AWS_ACCESS_KEY_ID=
+
+AWS_SECRET_ACCESS_KEY=
+
+AWS_REGION = us-east-1
+
+AWS_ECR_LOGIN_URI = demo>> 566373416292.dkr.ecr.ap-south-1.amazonaws.com
+
+ECR_REPOSITORY_NAME = simple-app
